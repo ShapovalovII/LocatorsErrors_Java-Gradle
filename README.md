@@ -1,9 +1,9 @@
 * Run test
 
 ```bash
-gradle test --tests InitialLocatorInvalidWithPath --info
+gradle test --tests InitialLocatorWithInvalidTAName --info
 gradle test --tests InitialLocatorNotExistOnUsePage --info
-gradle test --tests InitialLocatorWithInvalidPath --info
+gradle test --tests TALocatorWithInvalidInitialLocator --info
 gradle test --tests SmartLocatorInDatabase --info
 gradle test --tests SmartLocatorNotInDatabase --info
 ```

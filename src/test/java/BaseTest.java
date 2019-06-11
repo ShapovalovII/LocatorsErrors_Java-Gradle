@@ -1,9 +1,9 @@
 import io.trueautomation.client.driver.TrueAutomationDriver;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-
-import java.util.concurrent.TimeUnit;
 
 public class BaseTest {
     protected WebDriver driver;
@@ -11,11 +11,29 @@ public class BaseTest {
     @BeforeMethod
     public void beforeTest() {
         driver = new TrueAutomationDriver();
-        driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
     }
 
     @AfterMethod
     public void afterTest() {
         driver.quit();
+    }
+
+
+    public void checkErrorMessage(By withTa, String expectedError) {
+        try {
+            driver.findElement(withTa).click();
+        } catch (Exception ta) {
+            String actualErrorMessageWithTA = ta.getMessage();
+
+            System.out.println("\n**********************");
+            System.out.println("Expected error: " + expectedError);
+            System.out.println("**********************");
+
+            System.out.println("\n**********************");
+            System.out.println("Actual error: " + actualErrorMessageWithTA);
+            System.out.println("**********************");
+
+            Assert.assertTrue(actualErrorMessageWithTA.contains(expectedError), "Error messages not contains.");
+        }
     }
 }
