@@ -9,8 +9,8 @@ public class InitialLocatorWithInvalidTAName extends BaseTest {
     public void initialWithInvalidTAName() {
         driver.get("https://accounts.google.com");
 
-        By withTALocator = By.xpath(ta("ta!Name", "//span[@class='RveJvd snByac']"));
-        String expectedError = "TrueAutomation locator name contains unsupported characters. Please make sure to use only letters, numbers, colon and underscore symbols in locator names";
+        By withTALocator = By.xpath(ta("ta-Name", "//span[@class='RveJvd snByac']"));
+        String expectedError = "TrueAutomation locator ta-Name contains unsupported characters. Please make sure to use only letters, numbers, colon and underscore symbols in locator names. (WARNING: The server did not provide any stacktrace information)";
         checkErrorMessage(withTALocator, expectedError);
     }
 }
