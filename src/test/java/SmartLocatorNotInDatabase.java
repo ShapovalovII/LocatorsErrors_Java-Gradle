@@ -12,7 +12,7 @@ public class SmartLocatorNotInDatabase extends BaseTest {
 
         //The locator name does not exist in the database
         By withTALocator = byTa("SmartLocator:Not_in_the_database");
-        String expectedError = "NOT_FOUND";
+        String expectedError = "There is no such TA Locator in the objects repository. Element 'SmartLocator:Not_in_the_database' was not found in the objects repository of 'TestTA' project.";
         checkErrorMessage(withTALocator, expectedError);
     }
 }

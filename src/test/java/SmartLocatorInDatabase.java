@@ -12,7 +12,7 @@ public class SmartLocatorInDatabase extends BaseTest {
 
         //This locator is made on another page
         By withTALocator = byTa("Translate:Rus1");
-        String expectedError = "NOT_FOUND";
+        String expectedError = "Element was not found on the page. Element 'Translate:Rus1' with such locator is not on this page and could not be detected by TrueAutomation.";
         checkErrorMessage(withTALocator, expectedError);
     }
 }
