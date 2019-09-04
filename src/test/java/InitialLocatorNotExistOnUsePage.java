@@ -11,8 +11,8 @@ public class InitialLocatorNotExistOnUsePage extends BaseTest {
         driver.get("https://accounts.google.com");
 
         //Used locator taken from another page
-        By withTALocator = By.cssSelector(ta("Practike:Frame:iframe", "#courses-iframe"));
-        String expectedError = "Element was not found on the page. Element 'Practike:Frame:iframe' with such locator is not on this page and could not be detected by TrueAutomation.";
+        By withTALocator = By.xpath(ta("Google:test:div", "//div[@class='sl-more tlid-open-source-language-list']"));
+        String expectedError = "Element was not found on the page. Element 'Google:test:div' with such locator is not on this page and could not be detected by TrueAutomation.";
         checkErrorMessage(withTALocator, expectedError);
     }
 }
